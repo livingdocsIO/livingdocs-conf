@@ -56,7 +56,7 @@ function loadFile () {
   try {
     return require(p)
   } catch (err) {
-    const requireError = _.startsWith(err.message, `Cannot find module '${p}'`)
+    const requireError = err.code === 'MODULE_NOT_FOUND'
     if (!requireError) throw err
     if (required) throw err
   }

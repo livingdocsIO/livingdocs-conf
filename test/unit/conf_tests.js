@@ -2,7 +2,7 @@ const path = require('path')
 const chai = require('chai')
 const expect = chai.expect
 
-const Conf = require('../')
+const Conf = require('../../index')
 const pathToFixtures = path.resolve('test/fixtures')
 
 describe('The Conf', () => {

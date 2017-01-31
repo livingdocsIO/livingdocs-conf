@@ -1,3 +1,3 @@
 module.exports = {
-  foo: require('./foobar')
+  foo: require.resolve('./foobar')
 }
