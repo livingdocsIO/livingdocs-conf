@@ -1,0 +1,43 @@
+{
+    "name": "@livingdocs/livingdocs-conf",
+    "version": "0.0.0-placeholder",
+    "description": "Package to load, merge and access environment-specific configuration files.",
+    "main": "index.js",
+    "engines": {
+        "node": "6",
+        "npm": "^3.10.8"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/upfrontIO/livingdocs-conf"
+    },
+    "directories": {
+        "test": "test"
+    },
+    "keywords": [
+        "livingdocs",
+        "configuration",
+        "conf"
+    ],
+    "author": "upfrontIO",
+    "homepage": "https://github.com/upfrontIO/livingdocs-conf",
+    "scripts": {
+        "test": "mocha --recursive --reporter spec --check-leaks --slow 10ms --timeout 20000",
+        "test:watch": "npm run test -- --watch ./app/** ./lib/** ./test/**/**/*.js",
+        "test:coverage": "nyc --reporter=lcov npm test"
+    },
+    "dependencies": {
+        "ee-log": "^1.0.1",
+        "jsonpointer": "^4.0.1",
+        "lodash": "^4.17.4"
+    },
+    "devDependencies": {
+        "chai": "^3.5.0",
+        "chai-as-promised": "^6.0.0",
+        "mocha": "^3.2.0",
+        "nyc": "^10.0.0"
+    },
+    "publishConfig": {
+        "access": "restricted"
+    }
+}
