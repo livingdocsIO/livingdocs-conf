@@ -29,12 +29,13 @@ module.exports = class Conf {
 
   get (key, defaultValue) {
     assert(key, 'Cannot lookup undefined key in configuration')
+
     const val = pointer.get(this.config, strToPointer(key))
     if (val != null) return val
     else if (arguments.length === 2) return defaultValue
     throw new Error(
-      `Failed to get the required configuration for the key '${key}'\n` +
-      `You might want to add that key in your config file.`
+      `Failed to get the required configuration for the key '${key}'
+       You might want to add that key in your config file.`
     )
   }
 
