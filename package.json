@@ -22,8 +22,8 @@
     "author": "upfrontIO",
     "homepage": "https://github.com/upfrontIO/livingdocs-conf",
     "scripts": {
-        "test": "mocha --recursive --reporter spec --check-leaks --slow 10ms --timeout 20000",
-        "test:watch": "npm run test -- --watch ./test/*.js ./index.js",
+        "test": "mocha --recursive --reporter spec --check-leaks --slow 10ms --timeout 20000 test/unit",
+        "test:watch": "npm run test -- --watch ./test/unit/*.js ./index.js",
         "test:coverage": "nyc --reporter=lcov npm test"
     },
     "dependencies": {
