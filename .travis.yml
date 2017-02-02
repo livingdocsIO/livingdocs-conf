@@ -1,0 +1,16 @@
+# Recommended settings:
+# travis login --pro --auto
+# travis settings build_pull_requests --disable
+# travis settings build_pushes --enable
+language: nodejs
+notifications:
+  email: false
+install:
+  - nvm install "$(jq -r '.engines.node' package.json)"
+  - npm install -g npm@"$(jq -r '.engines.npm' package.json)"
+  - npm install
+script:
+  - npm ls
+  - npm run test:coverage && coveralls < coverage/lcov.info
+after_success:
+  - npm run semantic-release
