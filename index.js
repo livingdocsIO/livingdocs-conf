@@ -1,3 +1,4 @@
+require('coffee-script/register')
 const path = require('path')
 const assert = require('assert')
 const pointer = require('jsonpointer')
