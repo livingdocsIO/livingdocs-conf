@@ -31,6 +31,11 @@ describe('The Conf', () => {
       return expect(config.get('environments_staging')).to.be.true
     })
 
+    it('loads coffee files', () => {
+      const config = Conf.loadEnvironment(pathToFixtures, 'staging-coffee')
+      return expect(config.get('environments_staging')).to.be.true
+    })
+
     it('throws MODULE_NOT_FOUND errors if required', () => {
       const loadWithInvalidRequire = () => Conf.loadEnvironment(pathToFixtures, 'with_invalid_require')
       return expect(loadWithInvalidRequire).to.throw(/Cannot find module/)
