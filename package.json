@@ -24,7 +24,6 @@
     "semantic-release": "./bin/semantic-release.sh"
   },
   "dependencies": {
-    "ee-log": "^1.0.1",
     "jsonpointer": "^4.0.1",
     "lodash": "^4.17.4"
   },
