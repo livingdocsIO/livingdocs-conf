@@ -28,14 +28,14 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "@semantic-release/condition-travis": "^4.1.4",
-    "chai": "^3.5.0",
-    "chai-as-promised": "^6.0.0",
+    "@semantic-release/condition-travis": "^6.0.0",
+    "chai": "^4.1.1",
+    "chai-as-promised": "^7.1.1",
     "coveralls": "^2.11.15",
     "greenkeeper-postpublish": "^1.0.1",
-    "semantic-release": "^4.3.5",
+    "semantic-release": "^7.0.2",
     "mocha": "^3.2.0",
-    "nyc": "^10.0.0"
+    "nyc": "^11.1.0"
   },
   "engines": {
     "node": "6",
