@@ -11,6 +11,6 @@ install:
   - npm install
 script:
   - npm ls
-  - npm run test:coverage && ./mode_modules/.bin/coveralls < coverage/lcov.info
+  - npm run test:coverage && ./node_modules/.bin/coveralls < coverage/lcov.info
 after_success:
   - npm run semantic-release
