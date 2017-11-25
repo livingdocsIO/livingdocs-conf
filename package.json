@@ -28,7 +28,7 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "@semantic-release/condition-travis": "^6.0.0",
+    "@semantic-release/condition-travis": "^7.0.0",
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^2.11.15",
