@@ -1,6 +1,6 @@
 # @livingdocs/conf
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/upfrontIO/livingdocs-conf.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/livingdocsIO/livingdocs-conf.svg)](https://greenkeeper.io/)
 
 Package to load, merge and access environment-specific configuration files.
 
