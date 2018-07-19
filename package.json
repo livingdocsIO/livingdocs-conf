@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/upfrontIO/livingdocs-conf"
+    "url": "https://github.com/livingdocsIO/livingdocs-conf"
   },
   "directories": {
     "test": "test"
@@ -15,8 +15,8 @@
     "configuration",
     "conf"
   ],
-  "author": "upfrontIO",
-  "homepage": "https://github.com/upfrontIO/livingdocs-conf",
+  "author": "livingdocsIO",
+  "homepage": "https://github.com/livingdocsIO/livingdocs-conf",
   "scripts": {
     "test": "mocha --recursive --reporter spec --check-leaks --slow 10ms --timeout 20000 test/unit",
     "test:watch": "npm run test -- --watch ./test/unit/*.js ./index.js",
