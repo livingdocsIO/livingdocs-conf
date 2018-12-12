@@ -3,6 +3,7 @@
   "version": "0.0.0-placeholder",
   "description": "Package to load, merge and access environment-specific configuration files.",
   "main": "index.js",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/livingdocsIO/livingdocs-conf"
