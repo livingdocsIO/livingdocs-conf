@@ -32,7 +32,8 @@ describe('The Conf', () => {
     })
 
     it('throws MODULE_NOT_FOUND errors if required', () => {
-      const loadWithInvalidRequire = () => Conf.loadEnvironment(pathToFixtures, 'with_invalid_require')
+      const loadWithInvalidRequire = () =>
+        Conf.loadEnvironment(pathToFixtures, 'with_invalid_require')
       return expect(loadWithInvalidRequire).to.throw(/Cannot find module/)
     })
 
@@ -47,7 +48,8 @@ describe('The Conf', () => {
     })
 
     it('throws errors other than MODULE_NOT_FOUND even if not required', () => {
-      const loadWithInvalidRequire = () => Conf.loadEnvironment(pathToFixtures, 'with_invalid_secret')
+      const loadWithInvalidRequire = () =>
+        Conf.loadEnvironment(pathToFixtures, 'with_invalid_secret')
       return expect(loadWithInvalidRequire).to.throw('foobar is not defined')
     })
 
@@ -59,11 +61,9 @@ describe('The Conf', () => {
       })
 
       it('are nested with the separator __', () => {
-        let config
-
         process.env.server__host = 'localhost'
 
-        config = Conf.loadEnvironment(pathToFixtures, 'test')
+        const config = Conf.loadEnvironment(pathToFixtures, 'test')
         return expect(config.get('server:host')).to.eql('localhost')
       })
 
@@ -86,8 +86,10 @@ describe('The Conf', () => {
       it('loads secrets/test', () => expect(config.get('secrets_test')).to.be.true)
 
       it('does not include other environments', () => {
-        const getStagingEnvironments = () => config.get('environments_staging')
-        return expect(getStagingEnvironments).to["throw"]('Failed to get the required configuration for the key')
+        const getStagingEnvironments = () =>
+          config.get('environments_staging')
+        expect(getStagingEnvironments)
+          .to.throw('Failed to get the required configuration for the key')
       })
 
     })
@@ -103,14 +105,14 @@ describe('The Conf', () => {
       return expect(config.get('overwritten')).to.be.true
     })
 
-    it('adds new', function() {
+    it('adds new', function () {
       const config = new Conf()
 
       config.merge({added: true})
       return expect(config.get('added')).to.be.true
     })
 
-    it('merges existing', function() {
+    it('merges existing', function () {
       const config = new Conf()
 
       config.merge({
@@ -138,7 +140,7 @@ describe('The Conf', () => {
 
     })
 
-    it('does not touch existing', function() {
+    it('does not touch existing', function () {
       const config = new Conf({existing: true})
 
       config.merge({added: true})
@@ -181,7 +183,7 @@ describe('The Conf', () => {
     })
 
     it('throws an error on null values?', () => {
-      const config = new Conf({ test: null })
+      const config = new Conf({test: null})
       const getTest = () => config.get('test')
 
       expect(getTest).to.throw
@@ -213,7 +215,7 @@ describe('The Conf', () => {
   describe('toString:', () => {
 
     it('creates a json representation of the config', () => {
-      const presets = {test : true}
+      const presets = {test: true}
       const config = new Conf(presets)
 
       expect(config.toString()).to.equal('{"test":true}')

@@ -1,4 +1,3 @@
 module.exports = {
-  // undefined function
-  invalidSecret: foobar()
+  invalidSecret: foobar() // eslint-disable-line no-undef
 }

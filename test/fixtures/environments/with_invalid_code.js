@@ -1,3 +1,3 @@
 module.exports = {
-  foo : foobar()
+  foo: foobar() // eslint-disable-line no-undef
 }

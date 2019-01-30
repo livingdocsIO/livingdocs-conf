@@ -3,7 +3,6 @@ const assert = require('assert')
 const pointer = require('jsonpointer')
 const _ = require('lodash')
 
-
 module.exports = class Conf {
 
   constructor (obj = {}) {
