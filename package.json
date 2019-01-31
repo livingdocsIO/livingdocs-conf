@@ -38,8 +38,5 @@
   "engines": {
     "node": ">=8",
     "npm": ">=6.0.0"
-  },
-  "publishConfig": {
-    "access": "restricted"
   }
 }
