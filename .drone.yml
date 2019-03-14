@@ -7,7 +7,7 @@ clone:
 
 steps:
 - name: eslint
-  image: marcbachmann/eslint:5.10.0
+  image: marcbachmann/eslint:5.10.1
   environment:
     GH_TOKEN:
       from_secret: GH_TOKEN
