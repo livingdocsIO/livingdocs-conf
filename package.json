@@ -21,15 +21,13 @@
   "scripts": {
     "test": "mocha --recursive --reporter spec --check-leaks --slow 10ms --timeout 20000 test/unit",
     "test:watch": "npm run test -- --watch ./test/unit/*.js ./index.js",
-    "test:coverage": "nyc --reporter=lcov npm test",
-    "semantic-release": "./bin/semantic-release.sh"
+    "test:coverage": "nyc --reporter=lcov npm test"
   },
   "dependencies": {
     "jsonpointer": "^4.0.1",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "@semantic-release/condition-travis": "^6.0.0",
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
     "mocha": "^4.1.0",
@@ -38,5 +36,8 @@
   "engines": {
     "node": ">=8",
     "npm": ">=6.0.0"
+  },
+  "release": {
+    "extends": "@livingdocs/semantic-release-presets/npm-github"
   }
 }
