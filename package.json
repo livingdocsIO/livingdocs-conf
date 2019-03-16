@@ -8,14 +8,12 @@
     "type": "git",
     "url": "https://github.com/livingdocsIO/livingdocs-conf"
   },
-  "directories": {
-    "test": "test"
-  },
   "keywords": [
     "livingdocs",
     "configuration",
     "conf"
   ],
+  "files": ["index.js"],
   "author": "livingdocsIO",
   "homepage": "https://github.com/livingdocsIO/livingdocs-conf",
   "scripts": {
@@ -25,7 +23,7 @@
   },
   "dependencies": {
     "jsonpointer": "^4.0.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "chai": "^4.2.0",
