@@ -34,7 +34,8 @@ describe('The Conf', () => {
     it('throws MODULE_NOT_FOUND errors if required', () => {
       const loadWithInvalidRequire = () =>
         Conf.loadEnvironment(pathToFixtures, 'with_invalid_require')
-      expect(loadWithInvalidRequire).to.throw(/Cannot find module/)
+      expect(loadWithInvalidRequire).to.throw('Cannot find module')
+        .with.property('code', 'MODULE_NOT_FOUND')
     })
 
     it('catches MODULE_NOT_FOUND errors if optional', () => {
@@ -51,6 +52,13 @@ describe('The Conf', () => {
       const loadWithInvalidRequire = () =>
         Conf.loadEnvironment(pathToFixtures, 'with_invalid_secret')
       expect(loadWithInvalidRequire).to.throw('foobar is not defined')
+    })
+
+    it('swallows the MODULE_NOT_FOUND error only for the direct require', () => {
+      const loadWithInvalidRequire = () =>
+        Conf.loadEnvironment(pathToFixtures, 'with_invalid_require_in_secret')
+      expect(loadWithInvalidRequire).to.throw('Cannot find module')
+        .with.property('code', 'MODULE_NOT_FOUND')
     })
 
     describe('environment values:', () => {
