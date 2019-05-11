@@ -24,6 +24,14 @@ steps:
   image: node:8-alpine
   commands: ["npm run test -s"]
 
+- name: test-node-10
+  image: node:10-alpine
+  commands: ["npm run test -s"]
+
+- name: test-node-12
+  image: node:12-alpine
+  commands: ["npm run test -s"]
+
 - name: publish
   image: livingdocs/semantic-release:v1.0.0
   environment:
@@ -36,6 +44,6 @@ trigger:
   event: [push]
 ---
 kind: signature
-hmac: ac531211552345c14a7f9acef077dba96d0f9602d8c298a0f1f779797cf0237e
+hmac: 4c62a9554ee87f9598c6e662491d737c89f028e5fd457202edd2561000957b2c
 
 ...
