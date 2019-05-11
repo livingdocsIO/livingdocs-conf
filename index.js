@@ -14,9 +14,9 @@ module.exports = class Conf {
     assert(path.isAbsolute(configDir), 'configDir must be an absolute path')
     const conf = new Conf()
 
-    conf.merge(loadFile(configDir, 'environments/', 'all', {required: true}))
-    conf.merge(loadFile(configDir, 'environments', env, {required: true}))
-    conf.merge(loadFile(configDir, 'secrets', env, {required: false}))
+    conf.merge(loadFile([configDir, 'environments/all'], {required: true}))
+    conf.merge(loadFile([configDir, 'environments', env], {required: true}))
+    conf.merge(loadFile([configDir, 'secrets', env], {required: false}))
     conf.merge(getEnvVariables())
     conf.set('environment', env)
     return conf
@@ -47,10 +47,7 @@ module.exports = class Conf {
   }
 }
 
-function loadFile () {
-  const parts = _.take(arguments, arguments.length - 1)
-  const opts = arguments[arguments.length - 1]
-  const required = opts.required
+function loadFile (parts, opts) {
   const p = path.join.apply(path, parts)
 
   try {
