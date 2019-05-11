@@ -55,10 +55,10 @@ function loadFile () {
 
   try {
     return require(p)
-  } catch (err) {
-    const requireError = err.code === 'MODULE_NOT_FOUND'
-    if (!requireError) throw err
-    if (required) throw err
+  } catch (e) {
+    const isLoadError = e.code === 'MODULE_NOT_FOUND' && e.message === `Cannot find module '${p}'`
+    if (!isLoadError) throw e
+    if (required) throw e
   }
 }
 
