@@ -13,7 +13,9 @@
     "configuration",
     "conf"
   ],
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "author": "livingdocsIO",
   "homepage": "https://github.com/livingdocsIO/livingdocs-conf",
   "scripts": {
