@@ -33,8 +33,8 @@
     "nyc": "^14.0.0"
   },
   "engines": {
-    "node": ">=8",
-    "npm": ">=6.0.0"
+    "node": ">=10.13.0",
+    "npm": ">=6.13.4"
   },
   "release": {
     "extends": "@livingdocs/semantic-release-presets/npm-github"
