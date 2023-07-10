@@ -39,7 +39,17 @@ module.exports = class Conf {
   }
 
   merge (obj) {
-    return _.merge(this.config, obj)
+    return _.mergeWith(this.config, obj, (configValue, overrideValue) => {
+      // Do not apply merge on non-plain objects
+      if (typeof overrideValue === 'object' && overrideValue.constructor !== Object) {
+        return overrideValue
+      }
+
+      // Do not apply merge on arrays
+      if (Array.isArray(overrideValue)) {
+        return overrideValue
+      }
+    })
   }
 
   toString () {
@@ -61,11 +71,12 @@ function loadFile (parts, opts) {
 }
 
 function getEnvVariables () {
-  return _.reduce(process.env, function (obj, val, key) {
+  const env = {}
+  for (const key of Object.keys(process.env)) {
     const k = key.split('__').join('/')
-    pointer.set(obj, strToPointer(k), val)
-    return obj
-  }, {})
+    pointer.set(env, strToPointer(k), process.env[key])
+  }
+  return env
 }
 
 function strToPointer (str) {

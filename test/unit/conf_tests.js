@@ -155,6 +155,27 @@ describe('The Conf', () => {
       expect(config.get('added')).to.be.true
     })
 
+    it('does not merge arrays', function () {
+      const config = new Conf({foo: ['foo', 'bar']})
+
+      config.merge({foo: ['quz']})
+      expect(config.get('foo')).to.deep.equal(['quz'])
+    })
+
+    it('does not merge class instances, keeps the original object', function () {
+      class Foo {
+        constructor () {
+          this.foo = 'foo'
+        }
+      }
+
+      const config = new Conf({foo: {bar: 'bar'}})
+
+      const foo = new Foo()
+      config.merge({foo})
+      expect(config.get('foo')).to.equal(foo)
+      expect(foo.bar).to.equal(undefined)
+    })
   })
 
   describe('set:', () => {
