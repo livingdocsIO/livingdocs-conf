@@ -162,6 +162,13 @@ describe('The Conf', () => {
       expect(config.get('foo')).to.deep.equal(['quz'])
     })
 
+    it('merges null', function () {
+      const config = new Conf({foo: ['foo', 'bar']})
+
+      config.merge({foo: null})
+      expect(config.config.foo).to.deep.equal(null)
+    })
+
     it('does not merge class instances, keeps the original object', function () {
       class Foo {
         constructor () {

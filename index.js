@@ -41,7 +41,11 @@ module.exports = class Conf {
   merge (obj) {
     return _.mergeWith(this.config, obj, (configValue, overrideValue) => {
       // Do not apply merge on non-plain objects
-      if (typeof overrideValue === 'object' && overrideValue.constructor !== Object) {
+      if (
+        overrideValue &&
+        typeof overrideValue === 'object' &&
+        overrideValue.constructor !== Object
+      ) {
         return overrideValue
       }
 
