@@ -13,19 +13,19 @@ steps:
       from_secret: GH_TOKEN
 
 - name: install
-  image: node:18-alpine
+  image: node:22-alpine
   commands: ["npm ci"]
 
 - name: npm-ls
-  image: node:18-alpine
+  image: node:22-alpine
   commands: ["npm ls"]
 
-- name: test-node-18
-  image: node:18-alpine
+- name: test-node-22
+  image: node:22-alpine
   commands: ["npm run test -s"]
 
-- name: test-node-20
-  image: node:20-alpine
+- name: test-node-24
+  image: node:24-alpine
   commands: ["npm run test -s"]
 
 - name: publish
@@ -40,6 +40,6 @@ trigger:
   event: [push]
 ---
 kind: signature
-hmac: 5767d206bf6ea0ac2239efa61323f1a28800d3d299d433048971c05def233b14
+hmac: 57066a32ab938b47207f90eab3066ca5759e044b9d46b85e4d843c84409ae848
 
 ...

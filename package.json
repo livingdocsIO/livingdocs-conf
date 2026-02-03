@@ -19,18 +19,12 @@
   "author": "livingdocsIO",
   "homepage": "https://github.com/livingdocsIO/livingdocs-conf",
   "scripts": {
-    "test": "mocha --recursive --reporter spec --check-leaks --slow 10ms --timeout 20000 test/unit",
-    "test:watch": "npm run test -- --watch ./test/unit/*.js ./index.js",
-    "test:coverage": "nyc --reporter=lcov npm test"
+    "test": "node --test test/unit/*",
+    "test:watch": "node --test --watch test/unit/*"
   },
   "dependencies": {
     "jsonpointer": "^5.0.1",
     "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "chai": "^4.3.7",
-    "mocha": "^11.0.0",
-    "nyc": "^17.0.0"
   },
   "engines": {
     "node": ">=8",
